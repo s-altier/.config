@@ -11,9 +11,19 @@
 
 
 ;; ORG config
+
+;; org-mode global TODO list setup
+(setq org-agenda-files (list "~/org/work.org"
+                              "~/org/learning.org"))
+
+;; some orgshortcuts
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
 ;; disable electric-indent in org
 (add-hook 'org-mode-hook
-	  (lambda () (electric-indent-local-mode -1)))
+          (lambda () (electric-indent-local-mode -1)))
 
 (setq org-roam-directory "~/org")
 (setq org-roam-v2-ack t)
